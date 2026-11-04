@@ -1,0 +1,17 @@
+{
+  "name": "devlopergit04.github.io",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "GitHub Pages site for devlopergit04 — hosts the online graphical panel of downloader-bot.",
+  "scripts": {
+    "serve": "python3 -m http.server 8080 --bind 0.0.0.0",
+    "test": "node tests/unit.mjs",
+    "test:dom": "node tests/dom.mjs",
+    "test:live": "node tests/live.mjs",
+    "test:all": "node tests/unit.mjs && node tests/dom.mjs && PANEL_API=${PANEL_API:-http://127.0.0.1:8787} node tests/live.mjs"
+  },
+  "devDependencies": {
+    "jsdom": "^25.0.0"
+  }
+}

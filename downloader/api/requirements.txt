@@ -1,0 +1,5 @@
+# Extra requirements for the web panel bridge (api/server.py).
+# Install on top of the bot's own requirements.txt:
+#     pip install -r requirements.txt -r api/requirements.txt
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.30,<1.0

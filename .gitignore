@@ -1,0 +1,20 @@
+# dev tooling — never published to GitHub Pages
+node_modules/
+package-lock.json
+npm-debug.log*
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# bot output (when api/server.py is run from a checkout of this repo)
+downloads/
+
+# os / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

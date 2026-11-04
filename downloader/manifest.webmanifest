@@ -1,0 +1,25 @@
+{
+  "name": "Downloader Bot — پنل گرافیکی آنلاین",
+  "short_name": "Downloader",
+  "description": "پنل گرافیکی آنلاین ربات دانلود: صف زنده، تشخیص خودکار موتور (yt-dlp / gallery-dl / HTTP)، لاگ‌ها و تنظیمات .env",
+  "id": "/downloader/",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "dir": "rtl",
+  "lang": "fa",
+  "background_color": "#021a15",
+  "theme_color": "#021a15",
+  "categories": ["utilities", "productivity", "developer"],
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "assets/img/logo.png", "sizes": "128x128", "type": "image/png", "purpose": "any" },
+    { "src": "assets/img/logo.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ],
+  "shortcuts": [
+    { "name": "صف دانلود", "url": "./#/queue", "description": "افزودن لینک و مدیریت صف" },
+    { "name": "داشبورد", "url": "./#/dashboard", "description": "نمای کلی و آمار" },
+    { "name": "کنسول لاگ", "url": "./#/logs", "description": "رویدادهای زنده" }
+  ]
+}
