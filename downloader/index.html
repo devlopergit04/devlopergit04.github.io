@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Downloader Bot — پنل گرافیکی آنلاین</title>
+<meta name="description" content="پنل گرافیکی آنلاین ربات دانلود (downloader-bot): صف دانلود زنده، تشخیص خودکار موتور yt-dlp / gallery-dl / HTTP، مدیریت کیفیت، لاگ‌ها و تنظیمات .env — همه در مرورگر.">
+<meta name="theme-color" content="#021a15">
+<meta name="color-scheme" content="dark light">
+<meta property="og:title" content="Downloader Bot — پنل گرافیکی آنلاین">
+<meta property="og:description" content="ویدئو · صدا · تصویر · فایل — از هزاران سایت دنیا، با صف دانلود زنده و تشخیص هوشمند موتور.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://devlopergit04.github.io/downloader/">
+<meta property="og:image" content="assets/img/hero.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://devlopergit04.github.io/downloader/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/logo.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="assets/css/app.css">
+<link rel="preconnect" href="https://github.com">
+</head>
+<body>
+
+<!-- ═══════════════════════ icon sprite ═══════════════════════ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="m13.4 10.6 4.1-4.1"/><path d="M3.3 18a10 10 0 1 1 17.4 0"/></symbol>
+    <symbol id="i-queue" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 21h16"/></symbol>
+    <symbol id="i-terminal" viewBox="0 0 24 24"><path d="m5 7 5 5-5 5"/><path d="M13 17h6"/><rect x="2" y="3" width="20" height="18" rx="3"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18Z"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="M21.5 3.5 2.8 10.2c-.8.3-.8 1.4 0 1.7l7.4 2.6 2.6 7.4c.3.8 1.4.8 1.7 0Z"/><path d="m10.2 14.5 5-5"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.2 9a2.9 2.9 0 0 1 5.6 1c0 2-2.8 2.4-2.8 4"/><path d="M12 17.5h.01"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4 1.3-4-2.2-5.5-2.7M15 21v-3.4c0-1 .1-1.4-.5-2 2.3-.3 4.5-1.2 4.5-5.2a4 4 0 0 0-1.1-2.8 3.7 3.7 0 0 0-.1-2.8s-.9-.3-2.9 1.1a10 10 0 0 0-5 0C7.9 1.7 7 2 7 2a3.7 3.7 0 0 0-.1 2.8A4 4 0 0 0 5.8 7.6c0 4 2.2 4.9 4.5 5.2-.6.6-.6 1.2-.5 2V21"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></symbol>
+    <symbol id="i-lang" viewBox="0 0 24 24"><path d="M3 5h9M7.5 5c0 4-2 7.5-4.5 9"/><path d="M5 9.5c1 2 3 3.6 5.5 4"/><path d="m12 20 4.2-10.5L20.5 20M13.8 16.8h5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5Z"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="i-stop" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4.8c0-.4.4-.8.8-.8h4.4c.4 0 .8.4.8.8V7"/><path d="M6.5 7 7.6 20a1 1 0 0 0 1 .9h6.8a1 1 0 0 0 1-.9L17.5 7"/><path d="M10.5 11v6M13.5 11v6"/></symbol>
+    <symbol id="i-retry" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.6-5.9"/><path d="M20 4v5h-5"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7.5c0-1 .8-1.8 1.8-1.8h3.7c.6 0 1.1.3 1.4.8l.8 1.2h8.5c1 0 1.8.8 1.8 1.8v8c0 1-.8 1.8-1.8 1.8H4.8c-1 0-1.8-.8-1.8-1.8Z"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 5 5 10-11"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.6 2.5 17a2 2 0 0 0 1.7 3h15.6a2 2 0 0 0 1.7-3L13.7 3.6a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12Z"/></symbol>
+    <symbol id="i-video" viewBox="0 0 24 24"><rect x="2.5" y="5" width="14" height="14" rx="3"/><path d="m16.5 12 5-3.5v7Z"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="8.5" cy="9.5" r="1.8"/><path d="m4 17 4.5-4.5a2 2 0 0 1 2.8 0L16 17"/><path d="m14.5 15.5 1.7-1.7a2 2 0 0 1 2.8 0L21 15.5"/></symbol>
+    <symbol id="i-audio" viewBox="0 0 24 24"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6"/><path d="m20 4-9 9"/><path d="M18 14v5a1.8 1.8 0 0 1-1.8 1.8H5A1.8 1.8 0 0 1 3.2 19V7.8A1.8 1.8 0 0 1 5 6h5"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .5-8A6 6 0 0 0 6.2 9.6 3.7 3.7 0 0 0 7 18Z"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M10 2v3M14 2v3M10 19v3M14 19v3M2 10h3M2 14h3M19 10h3M19 14h3"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10.5 13.5a4 4 0 0 0 5.7 0l2.6-2.6a4 4 0 1 0-5.7-5.7l-1.3 1.3"/><path d="M13.5 10.5a4 4 0 0 0-5.7 0l-2.6 2.6a4 4 0 1 0 5.7 5.7l1.3-1.3"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v11"/><path d="m8 10.5 4 4 4-4"/><path d="M4 17v2.2c0 1 .8 1.8 1.8 1.8h12.4c1 0 1.8-.8 1.8-1.8V17"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2.5 9a15 15 0 0 1 19 0"/><path d="M6 12.5a10 10 0 0 1 12 0"/><path d="M9.4 16a5 5 0 0 1 5.2 0"/><path d="M12 19.5h.01"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 21s7-3.2 7-8.5V6l-7-3-7 3v6.5C5 17.8 12 21 12 21Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.2 2"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-save" viewBox="0 0 24 24"><path d="M5 3h11l3 3v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/><path d="M8 3v6h7V3M8 21v-6h8v6"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></symbol>
+  </defs>
+</svg>
+
+<div class="app" id="app">
+
+  <!-- ══════════════ sidebar ══════════════ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <img src="assets/img/logo.svg" alt="" width="40" height="40" class="brand-logo">
+      <div class="brand-text">
+        <strong data-i18n="app.name">Downloader Bot</strong>
+        <span data-i18n="app.tagline">پنل گرافیکی آنلاین</span>
+      </div>
+      <button class="icon-btn sidebar-close" id="sidebarClose" data-i18n-title="ui.close" aria-label="بستن منو"><svg><use href="#i-close"/></svg></button>
+    </div>
+
+    <nav class="nav" id="nav" aria-label="ناوبری اصلی">
+      <a class="nav-item" href="#/dashboard" data-route="dashboard"><svg><use href="#i-gauge"/></svg><span data-i18n="nav.dashboard">داشبورد</span></a>
+      <a class="nav-item" href="#/queue" data-route="queue"><svg><use href="#i-queue"/></svg><span data-i18n="nav.queue">صف دانلود</span><em class="nav-badge" id="navQueueBadge" hidden>0</em></a>
+      <a class="nav-item" href="#/logs" data-route="logs"><svg><use href="#i-terminal"/></svg><span data-i18n="nav.logs">کنسول لاگ</span><em class="nav-badge alt" id="navLogBadge" hidden>0</em></a>
+      <a class="nav-item" href="#/telegram" data-route="telegram"><svg><use href="#i-send"/></svg><span data-i18n="nav.telegram">پل تلگرام</span></a>
+      <a class="nav-item" href="#/sites" data-route="sites"><svg><use href="#i-globe"/></svg><span data-i18n="nav.sites">سایت‌های پشتیبانی</span></a>
+      <a class="nav-item" href="#/settings" data-route="settings"><svg><use href="#i-sliders"/></svg><span data-i18n="nav.settings">تنظیمات</span></a>
+      <a class="nav-item" href="#/help" data-route="help"><svg><use href="#i-help"/></svg><span data-i18n="nav.help">راهنما و درباره</span></a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <div class="engine-strip" id="engineStrip">
+        <span class="engine-pill" data-engine="yt-dlp"><svg><use href="#i-video"/></svg>yt-dlp</span>
+        <span class="engine-pill" data-engine="gallery-dl"><svg><use href="#i-image"/></svg>gallery-dl</span>
+        <span class="engine-pill" data-engine="http"><svg><use href="#i-file"/></svg>HTTP</span>
+      </div>
+      <div class="side-links">
+        <a href="https://github.com/devlopergit04/downloader-bot" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg><span data-i18n="nav.repo">مخزن پروژه</span></a>
+        <a href="https://github.com/devlopergit04/downloader-bot/releases" target="_blank" rel="noopener"><svg><use href="#i-download"/></svg><span data-i18n="nav.releases">دانلود Setup.exe</span></a>
+      </div>
+      <p class="version">v<span id="panelVersion">1.0.0</span> · <span id="modeLabelFooter">demo</span></p>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <!-- ══════════════ main ══════════════ -->
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn only-mobile" id="menuBtn" aria-label="منو"><svg><use href="#i-menu"/></svg></button>
+      <div class="topbar-title">
+        <h1 id="viewTitle">داشبورد</h1>
+        <p id="viewSubtitle" class="muted"></p>
+      </div>
+
+      <div class="topbar-actions">
+        <div class="seg" id="modeSwitch" role="group" aria-label="حالت اجرا">
+          <button class="seg-btn is-on" data-mode="demo" data-i18n-title="mode.demo.tip">
+            <svg><use href="#i-cpu"/></svg><span data-i18n="mode.demo">شبیه‌سازی</span>
+          </button>
+          <button class="seg-btn" data-mode="live" data-i18n-title="mode.live.tip">
+            <svg><use href="#i-cloud"/></svg><span data-i18n="mode.live">اتصال زنده</span>
+          </button>
+        </div>
+
+        <span class="conn" id="connChip" title="وضعیت اتصال">
+          <i class="dot" id="connDot"></i><span id="connText">—</span>
+        </span>
+
+        <button class="icon-btn" id="langBtn" data-i18n-title="ui.lang"><svg><use href="#i-lang"/></svg></button>
+        <button class="icon-btn" id="themeBtn" data-i18n-title="ui.theme"><svg><use href="#i-moon"/></svg></button>
+        <a class="icon-btn" href="https://github.com/devlopergit04/downloader-bot" target="_blank" rel="noopener" data-i18n-title="nav.repo"><svg><use href="#i-github"/></svg></a>
+      </div>
+    </header>
+
+    <main class="view" id="view" tabindex="-1"></main>
+
+    <footer class="statusbar" id="statusbar">
+      <span class="sb-msg" id="sbMessage">آماده</span>
+      <span class="sb-stats">
+        <span title="فعال"><svg><use href="#i-bolt"/></svg><b id="sbActive">0</b></span>
+        <span title="در صف"><svg><use href="#i-clock"/></svg><b id="sbQueued">0</b></span>
+        <span title="تکمیل‌شده"><svg><use href="#i-check"/></svg><b id="sbDone">0</b></span>
+        <span title="سرعت کل"><svg><use href="#i-download"/></svg><b id="sbSpeed">0 KiB/s</b></span>
+        <span class="sb-dir" id="sbDir" title="مسیر ذخیره‌سازی"></span>
+      </span>
+    </footer>
+  </div>
+</div>
+
+<!-- ══════════════ overlays ══════════════ -->
+<div class="drawer-root" id="drawerRoot" hidden>
+  <div class="drawer-scrim" data-close-drawer></div>
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+    <header class="drawer-head">
+      <div>
+        <h2 id="drawerTitle">جزئیات</h2>
+        <p class="muted" id="drawerSubtitle"></p>
+      </div>
+      <button class="icon-btn" data-close-drawer aria-label="بستن"><svg><use href="#i-close"/></svg></button>
+    </header>
+    <div class="drawer-body" id="drawerBody"></div>
+    <footer class="drawer-foot" id="drawerFoot"></footer>
+  </aside>
+</div>
+
+<div class="modal-root" id="modalRoot" hidden>
+  <div class="modal-scrim" data-close-modal></div>
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <header class="modal-head"><h2 id="modalTitle"></h2><button class="icon-btn" data-close-modal><svg><use href="#i-close"/></svg></button></header>
+    <div class="modal-body" id="modalBody"></div>
+    <footer class="modal-foot" id="modalFoot"></footer>
+  </div>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<div class="boot" id="boot">
+  <img src="assets/img/logo.svg" alt="" width="72" height="72">
+  <div class="boot-bar"><i></i></div>
+  <p data-i18n="boot.loading">در حال آماده‌سازی پنل…</p>
+</div>
+
+<noscript>
+  <div class="noscript">
+    <h2>JavaScript لازم است</h2>
+    <p>این پنل گرافیکی یک اپلیکیشن تک‌صفحه‌ای است و برای اجرا به JavaScript نیاز دارد.</p>
+  </div>
+</noscript>
+
+<script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

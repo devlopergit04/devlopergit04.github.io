@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" width="1200" height="640" role="img" aria-label="معماری پنل گرافیکی آنلاین و ربات دانلود">
+  <defs>
+    <linearGradient id="ar-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#022c22"/><stop offset="1" stop-color="#021a15"/>
+    </linearGradient>
+    <linearGradient id="ar-green" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10b981"/><stop offset="1" stop-color="#065f46"/>
+    </linearGradient>
+    <linearGradient id="ar-deep" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#065f46"/><stop offset="1" stop-color="#022c22"/>
+    </linearGradient>
+    <linearGradient id="ar-blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0ea5e9"/><stop offset="1" stop-color="#0c4a6e"/>
+    </linearGradient>
+    <linearGradient id="ar-amber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f59e0b"/><stop offset="1" stop-color="#78350f"/>
+    </linearGradient>
+    <marker id="ar-arrow" markerWidth="11" markerHeight="11" refX="8" refY="3.5" orient="auto">
+      <path d="M0,0 L8,3.5 L0,7 Z" fill="#10b981"/>
+    </marker>
+    <marker id="ar-arrow-b" markerWidth="11" markerHeight="11" refX="8" refY="3.5" orient="auto">
+      <path d="M0,0 L8,3.5 L0,7 Z" fill="#38bdf8"/>
+    </marker>
+    <style>
+      .t{font-family:"Segoe UI",Tahoma,Helvetica,Arial,sans-serif}
+      .h1{font-size:26px;font-weight:800;fill:#ecfdf5}
+      .h2{font-size:17px;font-weight:700;fill:#ecfdf5}
+      .h3{font-size:14px;font-weight:700;fill:#d1fae5}
+      .s{font-size:12px;fill:#a7f3d0}
+      .xs{font-size:11px;fill:#6ee7b7}
+      .mono{font-family:ui-monospace,Consolas,monospace;font-size:11.5px;fill:#a7f3d0}
+      .lane{font-size:13px;font-weight:800;fill:#34d399;letter-spacing:.5px}
+    </style>
+  </defs>
+
+  <rect width="1200" height="640" fill="url(#ar-bg)"/>
+  <text x="600" y="46" text-anchor="middle" class="t h1">معماری پنل گرافیکی آنلاین + ربات دانلود</text>
+  <text x="600" y="70" text-anchor="middle" class="t xs">devlopergit04.github.io/downloader — رابط وبِ پروژه‌ی devlopergit04/downloader-bot</text>
+
+  <!-- ══ top: the panel ══ -->
+  <g transform="translate(300,92)">
+    <rect width="600" height="86" rx="16" fill="url(#ar-green)">
+      <animate attributeName="opacity" values="0.9;1;0.9" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <text x="300" y="34" text-anchor="middle" class="t h2">پنل گرافیکی آنلاین (SPA)</text>
+    <text x="300" y="56" text-anchor="middle" class="t s">HTML + CSS + ES Modules — بدون build، بدون وابستگی خارجی، PWA و آفلاین</text>
+    <text x="300" y="74" text-anchor="middle" class="t mono">store.js · engine.js · jobs.js · sim.js · net.js · api.js · ui/*</text>
+  </g>
+
+  <!-- lanes -->
+  <text x="330" y="212" text-anchor="middle" class="t lane">مسیر ۱ — داخل مرورگر (بدون سرور)</text>
+  <text x="880" y="212" text-anchor="middle" class="t lane">مسیر ۲ — بک‌اند واقعی (live)</text>
+  <line x1="600" y1="196" x2="600" y2="612" stroke="#064e3b" stroke-width="2" stroke-dasharray="6 8"/>
+
+  <!-- arrows from panel -->
+  <path d="M450 178V232" stroke="#10b981" stroke-width="2.5" fill="none" marker-end="url(#ar-arrow)">
+    <animate attributeName="stroke-dasharray" values="0 200;200 0" dur="2.4s" repeatCount="indefinite"/>
+  </path>
+  <path d="M760 178V232" stroke="#38bdf8" stroke-width="2.5" fill="none" marker-end="url(#ar-arrow-b)"/>
+
+  <!-- ══ LEFT LANE ══ -->
+  <g transform="translate(90,236)">
+    <rect width="480" height="72" rx="14" fill="none" stroke="#10b981" stroke-width="2"/>
+    <text x="240" y="30" text-anchor="middle" class="t h3">engine.js — شناسایی و مسیریابی</text>
+    <text x="240" y="52" text-anchor="middle" class="t mono">detect_url() · classify() · _engine_for() · format selector</text>
+  </g>
+  <path d="M330 308v26" stroke="#10b981" stroke-width="2.5" fill="none" marker-end="url(#ar-arrow)"/>
+
+  <g transform="translate(90,338)">
+    <rect width="230" height="86" rx="14" fill="url(#ar-deep)" stroke="#10b981" stroke-width="1.5"/>
+    <text x="115" y="30" text-anchor="middle" class="t h3">demo</text>
+    <text x="115" y="52" text-anchor="middle" class="t s">sim.js</text>
+    <text x="115" y="70" text-anchor="middle" class="t xs">شبیه‌سازی موتور + لاگ + سرعت</text>
+  </g>
+
+  <g transform="translate(340,338)">
+    <rect width="230" height="86" rx="14" fill="url(#ar-amber)" opacity="0.92"/>
+    <text x="115" y="30" text-anchor="middle" class="t h3">browser</text>
+    <text x="115" y="52" text-anchor="middle" class="t s">net.js — fetch stream</text>
+    <text x="115" y="70" text-anchor="middle" class="t xs">دانلود واقعی اگر CORS اجازه دهد</text>
+  </g>
+
+  <path d="M205 424v30" stroke="#10b981" stroke-width="2.5" fill="none" marker-end="url(#ar-arrow)"/>
+  <path d="M455 424v30" stroke="#f59e0b" stroke-width="2.5" fill="none" marker-end="url(#ar-arrow)"/>
+
+  <g transform="translate(90,458)">
+    <rect width="480" height="72" rx="14" fill="#022c22" stroke="#064e3b" stroke-width="2"/>
+    <text x="240" y="30" text-anchor="middle" class="t h3">صف محلی + localStorage</text>
+    <text x="240" y="52" text-anchor="middle" class="t mono">jobs · logs · activity · settings · .env export</text>
+  </g>
+
+  <g transform="translate(90,552)">
+    <rect width="480" height="52" rx="12" fill="none" stroke="#064e3b" stroke-width="2" stroke-dasharray="5 6"/>
+    <text x="240" y="32" text-anchor="middle" class="t xs">فایل نهایی → پوشه‌ی دانلود مرورگر (در حالت browser)</text>
+  </g>
+  <path d="M330 530v20" stroke="#064e3b" stroke-width="2.5" fill="none" marker-end="url(#ar-arrow)"/>
+
+  <!-- ══ RIGHT LANE ══ -->
+  <g transform="translate(640,236)">
+    <rect width="480" height="72" rx="14" fill="none" stroke="#38bdf8" stroke-width="2"/>
+    <text x="240" y="30" text-anchor="middle" class="t h3">api.js — کلاینت REST / SSE</text>
+    <text x="240" y="52" text-anchor="middle" class="t mono">GET /api/health · POST /api/jobs · GET /api/events</text>
+  </g>
+  <path d="M880 308v26" stroke="#38bdf8" stroke-width="2.5" fill="none" marker-end="url(#ar-arrow-b)"/>
+
+  <g transform="translate(640,338)">
+    <rect width="480" height="86" rx="14" fill="url(#ar-blue)"/>
+    <text x="240" y="32" text-anchor="middle" class="t h2">api/server.py — FastAPI</text>
+    <text x="240" y="54" text-anchor="middle" class="t s">CORS برای github.io · صف ناهمگام · رویدادها (SSE)</text>
+    <text x="240" y="72" text-anchor="middle" class="t mono">uvicorn --host 0.0.0.0 --port 8787</text>
+  </g>
+  <path d="M880 424v26" stroke="#38bdf8" stroke-width="2.5" fill="none" marker-end="url(#ar-arrow-b)"/>
+
+  <g transform="translate(640,454)">
+    <rect width="480" height="66" rx="14" fill="url(#ar-green)">
+      <animate attributeName="opacity" values="0.88;1;0.88" dur="2.2s" repeatCount="indefinite"/>
+    </rect>
+    <text x="240" y="28" text-anchor="middle" class="t h2">DownloaderEngine</text>
+    <text x="240" y="50" text-anchor="middle" class="t s">downloader/engine.py — شناسایی نوع رسانه و مسیریابی</text>
+  </g>
+
+  <g transform="translate(640,540)">
+    <rect width="150" height="60" rx="12" fill="#022c22" stroke="#10b981" stroke-width="2"/>
+    <text x="75" y="26" text-anchor="middle" class="t h3">yt-dlp</text>
+    <text x="75" y="46" text-anchor="middle" class="t xs">ویدئو + صدا</text>
+    <rect x="165" width="150" height="60" rx="12" fill="#022c22" stroke="#38bdf8" stroke-width="2"/>
+    <text x="240" y="26" text-anchor="middle" class="t h3">gallery-dl</text>
+    <text x="240" y="46" text-anchor="middle" class="t xs">تصویر + گالری</text>
+    <rect x="330" width="150" height="60" rx="12" fill="#022c22" stroke="#f59e0b" stroke-width="2"/>
+    <text x="405" y="26" text-anchor="middle" class="t h3">HTTP</text>
+    <text x="405" y="46" text-anchor="middle" class="t xs">فایل مستقیم</text>
+  </g>
+  <path d="M715 520v18M880 520v18M1045 520v18" stroke="#064e3b" stroke-width="2" fill="none"/>
+
+  <!-- telegram note -->
+  <g transform="translate(90,612)">
+    <text x="0" y="16" class="t xs">bot.py تلگرام از همان DownloaderEngine استفاده می‌کند — پنل وب فقط یک رابط دیگر روی همان موتورهاست.</text>
+  </g>
+</svg>

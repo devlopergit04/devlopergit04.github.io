@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="320" height="320" role="img" aria-label="پنل آنلاین دانلود — پنجره‌ی مرورگر با صف دانلود زنده">
+  <defs>
+    <linearGradient id="hp-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#022c22"/><stop offset="1" stop-color="#021a15"/>
+    </linearGradient>
+    <linearGradient id="hp-bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#10b981"/><stop offset="1" stop-color="#6ee7b7"/>
+    </linearGradient>
+    <radialGradient id="hp-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.55"/><stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="hp-win"><rect x="34" y="52" width="252" height="216" rx="16"/></clipPath>
+  </defs>
+
+  <rect width="320" height="320" rx="34" fill="url(#hp-bg)"/>
+  <circle cx="238" cy="86" r="120" fill="url(#hp-glow)">
+    <animate attributeName="opacity" values="0.45;0.85;0.45" dur="4.5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- browser window -->
+  <g clip-path="url(#hp-win)">
+    <rect x="34" y="52" width="252" height="216" fill="#04231c"/>
+    <rect x="34" y="52" width="252" height="26" fill="#065f46"/>
+    <circle cx="50" cy="65" r="4" fill="#f87171"/>
+    <circle cx="64" cy="65" r="4" fill="#fbbf24"/>
+    <circle cx="78" cy="65" r="4" fill="#34d399"/>
+    <rect x="94" y="59" width="150" height="12" rx="6" fill="#021a15"/>
+    <text x="169" y="68.5" text-anchor="middle" font-family="monospace" font-size="8" fill="#6ee7b7">/downloader/</text>
+
+    <!-- rows -->
+    <g font-family="Segoe UI, Tahoma, sans-serif">
+      <g transform="translate(48,92)">
+        <rect width="224" height="40" rx="9" fill="#022c22" stroke="#064e3b"/>
+        <circle cx="20" cy="20" r="9" fill="#065f46"/>
+        <path d="M16 20h8M20 16v8" stroke="#6ee7b7" stroke-width="2" stroke-linecap="round"/>
+        <rect x="38" y="11" width="86" height="6" rx="3" fill="#0f6b52"/>
+        <rect x="38" y="23" width="150" height="5" rx="2.5" fill="#064e3b"/>
+        <rect x="38" y="23" width="0" height="5" rx="2.5" fill="url(#hp-bar)">
+          <animate attributeName="width" values="10;150;10" dur="5s" repeatCount="indefinite"/>
+        </rect>
+        <text x="212" y="18" text-anchor="end" font-size="9" fill="#34d399" font-weight="700">yt-dlp
+          <animate attributeName="opacity" values="1;0.4;1" dur="1.6s" repeatCount="indefinite"/>
+        </text>
+      </g>
+
+      <g transform="translate(48,140)">
+        <rect width="224" height="40" rx="9" fill="#022c22" stroke="#064e3b"/>
+        <circle cx="20" cy="20" r="9" fill="#0e4a63"/>
+        <rect x="15" y="15" width="10" height="10" rx="2" fill="none" stroke="#7dd3fc" stroke-width="2"/>
+        <rect x="38" y="11" width="64" height="6" rx="3" fill="#0f6b52"/>
+        <rect x="38" y="23" width="150" height="5" rx="2.5" fill="#064e3b"/>
+        <rect x="38" y="23" width="0" height="5" rx="2.5" fill="url(#hp-bar)">
+          <animate attributeName="width" values="60;150;60" dur="6.5s" repeatCount="indefinite"/>
+        </rect>
+        <text x="212" y="18" text-anchor="end" font-size="9" fill="#7dd3fc" font-weight="700">gallery-dl</text>
+      </g>
+
+      <g transform="translate(48,188)">
+        <rect width="224" height="40" rx="9" fill="#022c22" stroke="#064e3b"/>
+        <circle cx="20" cy="20" r="9" fill="#4d3a06"/>
+        <path d="M15 20h10M20 15v10" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" transform="rotate(45 20 20)"/>
+        <rect x="38" y="11" width="104" height="6" rx="3" fill="#0f6b52"/>
+        <rect x="38" y="23" width="150" height="5" rx="2.5" fill="#064e3b"/>
+        <rect x="38" y="23" width="150" height="5" rx="2.5" fill="#10b981"/>
+        <path d="M196 16l4 4 7-8" stroke="#34d399" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="212" y="30" text-anchor="end" font-size="8" fill="#fbbf24" font-weight="700">HTTP</text>
+      </g>
+    </g>
+  </g>
+  <rect x="34" y="52" width="252" height="216" rx="16" fill="none" stroke="#10b981" stroke-width="2"/>
+
+  <!-- floating download arrow -->
+  <g transform="translate(236,214)">
+    <circle r="30" fill="#021a15" stroke="#10b981" stroke-width="2"/>
+    <g stroke="#34d399" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <g>
+        <animateTransform attributeName="transform" type="translate" values="0 -4;0 4;0 -4" dur="1.7s" repeatCount="indefinite"/>
+        <path d="M0 -12V8"/><path d="M-8 1L0 9L8 1"/>
+      </g>
+      <path d="M-11 15h22" stroke="#10b981"/>
+    </g>
+  </g>
+
+  <text x="160" y="298" text-anchor="middle" font-family="Segoe UI, Tahoma, sans-serif" font-size="14" font-weight="700" fill="#a7f3d0">پنل گرافیکی آنلاین</text>
+</svg>
