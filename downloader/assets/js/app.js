@@ -7,7 +7,7 @@ import { startFree, toast } from './jobs.js';
 import * as L from './logs.js';
 import { t } from './i18n.js';
 
-export const VERSION = '1.0.0';
+export const VERSION = '1.0.1';
 
 async function boot() {
   load();

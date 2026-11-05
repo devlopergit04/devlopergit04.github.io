@@ -3,7 +3,7 @@
    · same-origin   → stale-while-revalidate
    · other origins → never touched (backend API calls must stay live)      */
 
-const VERSION = '1.0.0';
+const VERSION = '1.0.1';
 const CACHE = `dlbot-panel-v${VERSION}`;
 
 const SHELL = [

@@ -121,7 +121,7 @@ export const helpView = {
             <p><b>Downloader Bot — پنل گرافیکی آنلاین</b></p>
             <p class="muted">رابط وبِ پروژه‌ی <span class="mono">devlopergit04/downloader-bot</span>: همان موتورهای دانلود، همان تم سبز تیره‌ی پنل PyQt6، بدون نصب و در مرورگر.</p>
             <dl class="kv">
-              <dt>نسخه پنل</dt><dd class="mono">1.0.0</dd>
+              <dt>نسخه پنل</dt><dd class="mono">1.0.1</dd>
               <dt>موتورها</dt><dd class="mono">yt-dlp · gallery-dl · HTTP</dd>
               <dt>لایسنس</dt><dd>MIT</dd>
               <dt>حالت فعلی</dt><dd><span class="badge ${state.settings.mode === 'live' ? 'ok' : 'info'}">${esc(state.settings.mode)}</span></dd>

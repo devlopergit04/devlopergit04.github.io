@@ -92,6 +92,10 @@ p{margin:0}
 .mono{font-family:var(--mono);font-size:.92em;direction:ltr;unicode-bidi:isolate}
 .nowrap{white-space:nowrap}
 .hidden{display:none !important}
+/* The `hidden` attribute must always win over author `display:*` rules
+   (e.g. .drawer-root/.modal-root/.empty set display:flex) — otherwise the
+   overlays would stay on screen forever and block the whole page. */
+[hidden]{display:none !important}
 
 /* scrollbars */
 *::-webkit-scrollbar{width:10px;height:10px}
@@ -314,6 +318,7 @@ pre.code .s{color:#fca5a5}
 
 /* empty state */
 .empty{display:flex;flex-direction:column;align-items:center;gap:10px;padding:44px 20px;text-align:center;color:var(--muted)}
+.empty[hidden]{display:none}
 .empty svg{font-size:38px;opacity:.55;stroke-width:1.4}
 .empty h4{font-size:15px;color:var(--text-dim)}
 .empty p{font-size:12.5px;max-width:420px}
@@ -476,6 +481,9 @@ html[data-theme="light"] .req{color:#b91c1c}
 
 /* ══════════════════ drawer / modal / toasts ══════════════════ */
 .drawer-root,.modal-root{position:fixed;inset:0;z-index:60;display:flex}
+/* higher specificity than the rules above so `hidden` always wins,
+   in every engine (browsers honour the global [hidden] rule as well) */
+.drawer-root[hidden],.modal-root[hidden]{display:none}
 .drawer-root{justify-content:flex-end}
 html[dir="rtl"] .drawer-root{justify-content:flex-start}
 .drawer-scrim,.modal-scrim{position:absolute;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(3px);animation:fade .2s}
