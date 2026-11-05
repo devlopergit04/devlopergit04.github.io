@@ -49,6 +49,6 @@ for (const re of [/TELEGRAM_BOT_TOKEN=123:ABC/, /MAX_UPLOAD_MB=75/, /DOWNLOAD_DI
 assert.match(buildCompose(DEFAULT_SETTINGS), /webpanel:/);
 assert.match(buildRunScript(DEFAULT_SETTINGS), /python3 api\/server\.py/);
 assert.match(buildSystemdUnit(DEFAULT_SETTINGS), /\[Service\]/);
-assert.equal(JSON.parse(buildPanelSnapshot()).panel, 'downloader-bot-web-panel/1.0.0');
+assert.equal(JSON.parse(buildPanelSnapshot()).panel, 'downloader-bot-web-panel/1.0.1');
 
 console.log('✔ unit smoke tests passed');

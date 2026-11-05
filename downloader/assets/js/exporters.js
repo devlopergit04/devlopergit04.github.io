@@ -167,7 +167,7 @@ export function buildPanelSnapshot() {
   const { jobs, stats, settings } = state;
   return JSON.stringify({
     generatedAt: new Date().toISOString(),
-    panel: 'downloader-bot-web-panel/1.0.0',
+    panel: 'downloader-bot-web-panel/1.0.1',
     settings: { ...settings, telegramBotToken: settings.telegramBotToken ? '***redacted***' : '' },
     stats,
     jobs: jobs.map(({ meta, ...j }) => j),

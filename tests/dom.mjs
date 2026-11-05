@@ -24,6 +24,12 @@ const dom = new JSDOM(html, {
 });
 const { window } = dom;
 
+/* jsdom does not fetch <link rel=stylesheet> — inject the real stylesheet so the
+   computed-style assertions below exercise the actual cascade. */
+window.document.head.insertAdjacentHTML(
+  'beforeend',
+  `<style>${fs.readFileSync(path.join(ROOT, 'assets/css/app.css'), 'utf8')}</style>`);
+
 /* ── browser APIs jsdom lacks ─────────────────────────────────────────── */
 const noop = () => {};
 const ctx2d = new Proxy({}, { get: (_t, p) => (p === 'canvas' ? {} : (p === 'createLinearGradient' || p === 'createRadialGradient'
@@ -62,6 +68,7 @@ const $$ = (s) => [...window.document.querySelectorAll(s)];
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const wait = async (ms) => { await sleep(ms); };
 
+const gcs = (sel) => window.getComputedStyle(window.document.querySelector(sel));
 let checks = 0;
 function ok(cond, label, extra = '') {
   checks++;
@@ -77,6 +84,9 @@ ok($('#view').innerHTML.length > 800, 'dashboard rendered', `${$('#view').innerH
 ok($('#viewTitle').textContent.length > 0, 'view title set', $('#viewTitle').textContent);
 ok($$('.nav-item.is-active').length === 1, 'one active nav item');
 ok($('#sbDir').textContent.includes('downloads'), 'status bar dir', $('#sbDir').textContent.trim());
+ok(gcs('#drawerRoot').display === 'none', 'drawer overlay is display:none while [hidden]');
+ok(gcs('#modalRoot').display === 'none', 'modal overlay is display:none while [hidden]');
+ok(gcs('#scrim').display === 'none', 'mobile scrim is display:none while [hidden]');
 
 console.log('\n[2] routing to every view');
 for (const route of ['queue', 'logs', 'telegram', 'sites', 'settings', 'help', 'dashboard']) {
@@ -119,6 +129,7 @@ ok(active.length <= state.settings.concurrency, 'concurrency respected', `${acti
 ok(state.logs.length > 10, 'logs flowing', `${state.logs.length} entries`);
 ok($('#overallPct').textContent !== '0%', 'overall progress moved', $('#overallPct').textContent);
 ok(Number($('#navQueueBadge').textContent.replace(/[^\d]/g, '')) >= 0, 'queue badge updated', $('#navQueueBadge').textContent);
+ok(gcs('#queueEmpty').display === 'none', 'empty-state stays hidden while jobs exist');
 
 console.log('\n[5] job controls');
 const target = state.jobs.find((j) => j.status === 'downloading') || state.jobs[0];
@@ -136,11 +147,13 @@ console.log('\n[6] detail drawer');
 $$('#jobBody tr')[1]?.dispatchEvent(new window.MouseEvent('click', { bubbles: true }));
 await wait(200);
 ok($('#drawerRoot').hidden === false, 'drawer opened');
+ok(gcs('#drawerRoot').display === 'flex', 'drawer overlay is actually visible when open');
 ok($('#drawerBody').innerHTML.includes('kv'), 'drawer has details');
 ok($('#drawerFoot').children.length > 0, 'drawer has actions');
 $('[data-close-drawer]')?.dispatchEvent(new window.MouseEvent('click', { bubbles: true }));
 await wait(100);
 ok($('#drawerRoot').hidden === true, 'drawer closed');
+ok(gcs('#drawerRoot').display === 'none', 'drawer overlay is really gone after closing');
 
 console.log('\n[7] logs view filters');
 window.location.hash = '#/logs';
@@ -169,7 +182,7 @@ ok(buildEnv().includes('TELEGRAM_BOT_TOKEN='), '.env builds');
 ok(buildCompose().includes('downloader-webpanel'), 'compose builds');
 ok(buildRunScript().includes('api/server.py'), 'run.sh builds');
 ok(buildSystemdUnit().includes('[Service]'), 'systemd unit builds');
-ok(JSON.parse(buildPanelSnapshot()).panel.includes('1.0.0'), 'snapshot is valid JSON');
+ok(JSON.parse(buildPanelSnapshot()).panel.startsWith('downloader-bot-web-panel/'), 'snapshot is valid JSON');
 $('[data-tab="backend"]').dispatchEvent(new window.MouseEvent('click', { bubbles: true }));
 await wait(120);
 ok($('#setBody').innerHTML.includes('apiUrl') || $('#setBody').innerHTML.includes('data-set="apiUrl"'), 'backend tab rendered');
